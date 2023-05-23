@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <script defer src="js/main.js"></script>
     <script defer src="js/canvas.js"></script>
+    <script defer src ="js/screen.js"></script>
 
     <title>Document</title>
   </head>
@@ -26,13 +27,23 @@
       </nav>
     </header>
     <div class="main">
+      <div class="wrap-wrap">
       <div class="wrap">
         <canvas id="myCanvas" width="" height=""></canvas>
+        
       </div>
       <div class="btn">
         <br />
         <button class="start">start !!</button>
       </div>
+    </div>
+      <div class="How-to">
+        <h1 class="How">게임방법</h1>
+        <div class="h-images">
+          <img src="./img/1.PNG"> 
+          <img src="./img/2.PNG"> 
+        </div>
+        </div>
       <div class="tip_how">
         <div class="tip_wrap">
           <h1>TIP</h1>
@@ -41,26 +52,29 @@
           </div>
 
           <div class="tip_input">
-            <input type="text" class="footer_input" placeholder="팁 입력" />
+            <input type="text" class="footer_input" placeholder="팁 작성" />
             <button class="footerAdd_Btn">
               <i class="fa-solid fa-circle-plus"></i>
             </button>
           </div>
+      
+        
         </div>
-        <div class="How-to">
-          <h1 class="How">게임방법</h1>
-          <div class="h-images">
-            <img src="./img/1.PNG"> 
-            <img src="./img/2.PNG"> 
-          
+        <div class="image" id="box">
+          <img class="arc" src="img/arcade.jpg"> 
+          <div class="say">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero distinctio veniam delectus rerum sequi voluptatem maiores porro ipsa libero officiis ullam eaque, quo deleniti quibusdam obcaecati fuga. Rerum, iure cumque?
           </div>
         </div>
       </div>
+      <div class="record-wrap">
       <div class="record">
         <ul class="record-ul"></ul>
       </div>
+      </div>
 
-    </main>
+
+    </div>
     <footer>
       <span> 제작자 : 유종석 </span>
       <br />

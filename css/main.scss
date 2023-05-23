@@ -10,25 +10,27 @@ $pc: "(min-width:1270px)";
 body {
  
   margin: 0;
-  background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=) 
-    rgb(13, 45, 94);
+    
 }
+
 a {
   text-decoration: none;
 }
 li {
   list-style: none;
 }
-header {margin-bottom: 250px;}
+header {margin-bottom: 250px; }
 
 .logo {
-  display: flex;
+  
+  margin-left: 0;
+  margin-bottom: 50px;
   text-align: center;
   font-weight: bold;
   color: white;
   font-size: 100px;
   justify-content: center;
-  margin-left: 40px;
+  
 @media #{$mobile} {
   font-size: 50px;
 }
@@ -61,13 +63,18 @@ nav {
   }
 }
 .main {
-  padding: 50px 0;
-  width: 90%;
-  margin:0;
+  
+  padding: 0px 0;
+  width: 100%;
+ 
   @media #{$mobile} {
     width: 90%;
   }
 }
+.wrap-wrap{  
+  padding: 400px 0 200px 0;
+  background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=) 
+;
 .wrap {margin: auto;
   display: flex;
   flex-direction: row;
@@ -87,13 +94,14 @@ nav {
     align-items: start;
   }
 }
+}
 canvas {
   border: solid red 1px;
   background-color: white;
   @media #{$pc} {
     width: 35%;
     height: 70%;
-    min-width: 600px;
+    min-width: 650px;
   }
   @media #{$mobile} {
     width: 75%;
@@ -123,27 +131,28 @@ canvas {
     }
   }
 }
-.tip_how {
-  background:  rgba(102, 153, 119, 0.541);
-  display: flex;
-  justify-content: space-around;
-width: 100%;
-padding : 0 50px;
-margin:  auto; 
-margin-bottom: 300px;
-  .tip_wrap { 
+
+  .tip_wrap {  width: 100%; box-sizing: border-box;
+    
+    padding : 400px 0px 150px 65px;
+  
+    background: url(../img/board.jpg) no-repeat center;
+    background-size: cover ;
     h1 {display: inline-block}
-    flex: 0.5;
-    .tip_input {display: inline;}
+   
+    .tip_input {display: inline;
+      input {width: 60%; height: 50px; margin: auto;}}
 
     .tip {
      
-      @media #{$pc} {
-        margin: auto 0;
-        width: 70%;
-        background-color:rgba(239, 241, 226, 0.9);
-        height: 500px;
-        padding: 20px;
+      @media #{$pc} {padding: 100px 50px 100px 0;
+        
+        margin: 0 auto ;
+        width: 40%;
+        background-color:rgba(239, 241, 226, 0);
+       min-height: 700px;
+        
+      
       
       }
       
@@ -166,23 +175,49 @@ margin-bottom: 300px;
    
   }
   .How-to{
+    padding: 100px 0 ;
     flex:0.3;
     background: white;
     img{
       width: 100px ; height: 100px;
     }
   }
+.image{ background:#131b16 url("../img/neon.avif" )center no-repeat ; 
+  background-size: 100% ;
+  padding: 100vh 100px;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+.arc {
+  opacity: 1;
+  position: relative;
+  bottom: -600px;
+  left:-1100px;
+ width: 40%;
+ height: 50%;  
+
+} 
+.say {width: 80%;
+  padding-left: 50px;
+  color:white;
+  font-size: 100px;
 }
-.record {
+}
+.record-wrap{background: url("../img/yellow.jpg") center no-repeat ;
+  background-size:  cover;
+  padding : 300px 0px;
+  height: 100%;
+.record { 
  
   background: white;
   @media #{$pc} {
-    margin:100px auto;
+    margin:0px auto;
     width: 70%;
     height: 500px;
   }
 }
-
+}
 //!-------------발----------------//
 
 footer {
