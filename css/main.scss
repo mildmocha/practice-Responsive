@@ -1,16 +1,9 @@
-
-
-
-
 $mobile: "(max-width:767px)";
-
 
 $tablet: "(min-width:768px) and (max-width:1269px)";
 $pc: "(min-width:1270px)";
 body {
- 
   margin: 0;
-    
 }
 
 a {
@@ -19,10 +12,16 @@ a {
 li {
   list-style: none;
 }
-header {margin-bottom: 250px; }
+header { position: fixed; background: rgba(0, 110, 255, 0.438);
+  top: 0;
+  left: 0;
+  width: 100%;
+transition: 0.5s;
 
+}
+.scr { transform:translateY(-400px); }
 .logo {
-  
+  padding-top: 50px;
   margin-left: 0;
   margin-bottom: 50px;
   text-align: center;
@@ -30,17 +29,16 @@ header {margin-bottom: 250px; }
   color: white;
   font-size: 100px;
   justify-content: center;
-  
-@media #{$mobile} {
-  font-size: 50px;
-}
-}
 
-
+  @media #{$mobile} {
+    font-size: 50px;
+  }
+}
+.scr nav {opacity: 0; transition: 0.5s;}
 nav {
   background: rgb(57, 57, 61);
   height: 100px;
-  margin-bottom: 100px;
+  margin-top: 100px;
   @media #{$mobile} {
     margin-bottom: 20px;
   }
@@ -49,7 +47,7 @@ nav {
     justify-content: center;
     align-items: center;
     @media #{$mobile} {
-      padding: 0
+      padding: 0;
     }
     li {
       flex: 1;
@@ -63,45 +61,44 @@ nav {
   }
 }
 .main {
-  
   padding: 0px 0;
   width: 100%;
- 
+
   @media #{$mobile} {
-    width: 90%;
+    
   }
 }
-.wrap-wrap{  
-  padding: 400px 0 200px 0;
-  background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=) 
-;
-.wrap {margin: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 500px;
-  @media #{$pc} {
-    background: url(https://i.namu.wiki/i/6ssCAw8JIsvKCk33Xz5TGiP1gpqTo-UIX2vI_1c0fQswBlqEDBKA4NfukubAnjSWkE3CrTdgi9vrbNsdc0LzHwQbMrd0RxQMXuQA4ZmuNja2a-g3NQQKOMlRpdwdTSU4u2L-StGOI3ZpzgLA3pqCvw.webp) no-repeat
-      no-repeat center center;
-  }
-  @media #{$mobile} {
-    height: 600px;
+.wrap-wrap {
+  padding: 700px 0 200px 0;
+  background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=);
+  .wrap {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    background: url(/brick/pngegg.png) center center no-repeat;
-    background-size: 100px contain;
-    align-items: start;
+    height: 500px;
+    @media #{$pc} {
+      background: url(https://i.namu.wiki/i/6ssCAw8JIsvKCk33Xz5TGiP1gpqTo-UIX2vI_1c0fQswBlqEDBKA4NfukubAnjSWkE3CrTdgi9vrbNsdc0LzHwQbMrd0RxQMXuQA4ZmuNja2a-g3NQQKOMlRpdwdTSU4u2L-StGOI3ZpzgLA3pqCvw.webp)
+        no-repeat no-repeat center center;
+    }
+    @media #{$mobile} {
+      height: 600px;
+      width: 100%;
+      background: url(/brick/pngegg.png) center center no-repeat;
+      background-size: 100px contain;
+      align-items: start;
+    }
   }
-}
 }
 canvas {
   border: solid red 1px;
   background-color: white;
   @media #{$pc} {
-    width: 35%;
+    
     height: 70%;
-    min-width: 650px;
+    width: 650px;
   }
   @media #{$mobile} {
     width: 75%;
@@ -110,14 +107,13 @@ canvas {
   }
 }
 .btn {
-  @media #{$pc}{
-    padding-bottom: 200px ;
-  margin:  auto;
-  width: 500px;
+  @media #{$pc} {
+    padding-bottom: 200px;
+    margin: auto;
+    width: 500px;
   }
   .start {
-
-    font-family: 'Permanent Marker', cursive;
+    font-family: "Permanent Marker", cursive;
 
     @media #{$pc} {
       font-size: 50px;
@@ -132,91 +128,119 @@ canvas {
   }
 }
 
-  .tip_wrap {  width: 100%; box-sizing: border-box;
-    
-    padding : 400px 0px 150px 65px;
+.tip_wrap {@media #{$pc} {
+  min-width: 1750px;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 500px 0px 200px 65px;
+}
+  background: url(../img/board.jpg) no-repeat center;
+  background-size: cover; text-align: center;
+  h1 { position: relative; top: 0px;
+    display: inline-block;
+  }
+
+  .tip_input {text-align: center;
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    input {
+      width: 40%;
+      height: 50px;
+      margin: auto;
+    }
+  }
+
+  .tip {
+    @media #{$pc} {
+      padding: 100px 50px 100px -50px;
+
+      margin: 0 auto;
+      width: 40%;
+      background-color: rgba(239, 241, 226, 0);
+      min-height: 800px;
+    }
+
+    .item_row {@media #{$pc} {
+      position: relative;
+      margin-bottom: 30px;
+      &::before {
+        border-radius: 50px;
+        content: "";
+        display: block;
+        background: rgba(255, 0, 0, 0.425) url(../img/pngwing.com.png) center center no-repeat;
+        position: absolute;
+        top:10px;
+        left: -30px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+
+      }
+      .item {text-align: start; padding-left: 20px; font-family: 'Nanum Pen Script', cursive; font-size: 40px;}
+      i {
+        font-size: 20px;
+        color: red;
+      }
+      button {
+        float: right;
+        background: transparent;
+        border: none;
+      }
+    }}
+  }
+}
+.How-to { margin: auto; width: 100%;
+  padding: 200px 0;
+  text-align: center;
   
-    background: url(../img/board.jpg) no-repeat center;
-    background-size: cover ;
-    h1 {display: inline-block}
-   
-    .tip_input {display: inline;
-      input {width: 60%; height: 50px; margin: auto;}}
-
-    .tip {
-     
-      @media #{$pc} {padding: 100px 50px 100px 0;
-        
-        margin: 0 auto ;
-        width: 40%;
-        background-color:rgba(239, 241, 226, 0);
-       min-height: 700px;
-        
-      
-      
-      }
-      
-      .item_row { position: relative;
-        margin-bottom: 30px;
-        &::before {
-          content: "";
-          display: block;
-          background: url(../img/pngwing.com.png) center center no-repeat;
-          position: absolute;
-          left :-30px;
-          width: 20px; height: 20px;
-          background-size: cover;
-
-        }
-        i {font-size: 20px; color:red; }
-        button { float: right; background: transparent; border: none;}
-      }
-    }
-   
+  background: white;
+  .How { margin-bottom: 100px;}
+  img {
+    width: 500px;
+    height: 300px;
   }
-  .How-to{
-    padding: 100px 0 ;
-    flex:0.3;
-    background: white;
-    img{
-      width: 100px ; height: 100px;
-    }
-  }
-.image{ background:#131b16 url("../img/neon.avif" )center no-repeat ; 
-  background-size: 100% ;
+}
+.image {
+  background: #131b16 url("../img/neon.avif") center no-repeat;
+  background-size: 100%;
   padding: 100vh 100px;
   height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-.arc {
-  opacity: 1;
-  position: relative;
-  bottom: -600px;
-  left:-1100px;
- width: 40%;
- height: 50%;  
+  .arc {
+    opacity: -3000000;
+    position: relative;
+    bottom: -600px;
+    left: -1100px;
+    width: 40%;
+    height: 50%;
+  }
+  
 
-} 
-.say {width: 80%;
-  padding-left: 50px;
-  color:white;
-  font-size: 100px;
-}
-}
-.record-wrap{background: url("../img/yellow.jpg") center no-repeat ;
-  background-size:  cover;
-  padding : 300px 0px;
-  height: 100%;
-.record { 
- 
-  background: white;
-  @media #{$pc} {
-    margin:0px auto;
-    width: 70%;
-    height: 500px;
+  .say {
+    width: 80%;
+    
+    color: white;
+    @media #{$pc} {padding-left: 50px;
+    font-size: 100px;}
   }
 }
+.record-wrap {
+  background: url("../img/yellow.jpg") center no-repeat;
+  background-size: cover;
+  padding: 300px 0px;
+  height: 100%;
+  .record {
+    background: white;
+    @media #{$pc} {
+      margin: 0px auto;
+      width: 70%;
+      height: 500px;
+    }
+  }
 }
 //!-------------발----------------//
 
@@ -224,9 +248,8 @@ footer {
   background: black;
 
   color: white;
-  
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-  
+
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
 }

@@ -20,7 +20,7 @@
         //패들 설정
         let paddleHeight = displayHeight/40;
         let paddleWidth = displayWidth/ 8   
-        let paddleX = (canvas.width-paddleWidth)/2; //패들위치
+        let paddleX = (canvas.width+paddleWidth); //패들위치
    //공 위치
    let x = canvas.width / 2;
    let y = canvas.height +260;
@@ -38,7 +38,7 @@
   
   //벽돌 선언
   let brickRowCount =2 ; //열
-  let brickColumnCount =10; //행
+  let brickColumnCount =9; //행
   let brickWidth = displayWidth/11;
   let brickHeight= displayHeight/25 ;
   let brickPadding = displayWidth/190;
@@ -101,6 +101,9 @@
                   dy=-dy;
                   b.status=0;
                   score ++;
+                  if(score == brickRowCount*brickColumnCount) {
+                        alert("YOU WIN, CONGRATULATIONS!");
+                        document.location.reload();}
               }
           }
           }
@@ -154,7 +157,7 @@
     const devicePixelRatio = window.devicePixelRatio || 1;
     canvas.width = displayWidth * devicePixelRatio ;
     canvas.height = displayHeight * devicePixelRatio;
-    ctx.scale(devicePixelRatio, devicePixelRatio);
+   
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
@@ -166,7 +169,7 @@
          
           canvasSize()
         
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.clearRect(0, 0, canvas.width+100, canvas.height);
           
           drawBricks();    
           drawBall();
@@ -201,9 +204,9 @@
              
         // 좌우이동
           if (rightPressed && paddleX < canvas.width - paddleWidth) {
-            paddleX += 10;
+            paddleX += 15;
           } else if (leftPressed && paddleX > 0) {
-            paddleX -= 10;
+            paddleX -= 15;
           }
           x += dx;
           y += dy;
@@ -212,8 +215,8 @@
         
           
         window.addEventListener('resize', () => {  
-          canvas.height = window.innerHeight - 50
-          canvas.width = window.innerWidth - 50
+          canvas.height = window.innerHeight 
+          canvas.width = window.innerWidth 
         })
         startBtn.addEventListener("click",()=>{
           setInterval(draw,10)})
