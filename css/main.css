@@ -118,7 +118,7 @@ nav ul li a {
 }
 
 canvas {
-  border: solid red 1px;
+  border: solid black 5px;
   background-color: white;
   height: 70%;
   width: 650px;
@@ -138,6 +138,11 @@ canvas {
   }
 }
 
+.btn {
+  padding-bottom: 200px;
+  margin: auto;
+  width: 500px;
+}
 @media (min-width:1270px) {
   .btn {
     padding-bottom: 200px;
@@ -147,6 +152,14 @@ canvas {
 }
 .btn .start {
   font-family: "Permanent Marker", cursive;
+  font-size: 50px;
+  border-radius: 50px;
+  background: rgb(147, 216, 153);
+  width: 500px;
+  height: 100px;
+}
+.btn .start:active {
+  background: rgb(53, 53, 50);
 }
 @media (min-width:1270px) {
   .btn .start {
@@ -189,6 +202,7 @@ canvas {
 @media (min-width:768px) and (max-width:1269px) {
   .tip_wrap h1 {
     top: 0;
+    margin-left: 30px;
   }
 }
 .tip_wrap .tip_input {
@@ -228,7 +242,7 @@ canvas {
     margin: 0 auto;
     padding: 20px 0px 20px 0px;
     box-sizing: border-box;
-    height: 400px;
+    height: 350px;
   }
 }
 .tip_wrap .tip .item_row i {
@@ -309,6 +323,12 @@ canvas {
   justify-content: space-between;
   align-items: center;
 }
+@media (min-width:768px) and (max-width:1269px) {
+  .image {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 @media (min-width:1270px) {
   .image {
     padding: 100vh 100px;
@@ -317,35 +337,76 @@ canvas {
 .image .arc {
   opacity: 0;
   position: relative;
-  width: 40%;
+  width: 30%;
   height: 50%;
 }
+@media (min-width:768px) and (max-width:1269px) {
+  .image .arc {
+    position: static;
+    opacity: 1;
+    width: 50%;
+    height: 40%;
+    margin-bottom: 40px;
+  }
+}
 .image .say {
-  width: 80%;
+  width: 70%;
+  text-shadow: -1px 0px rgb(255, 0, 119), 0px 1px red, 1px 0px red, 0px -1px red;
+  font-weight: bold;
+  font-size: 25px;
   color: white;
 }
 @media (min-width:1270px) {
   .image .say {
-    padding-left: 50px;
-    font-size: 100px;
+    padding-left: 70px;
+    font-size: 70px;
   }
 }
 
 .record-wrap {
+  text-align: center;
   background: url("../img/yellow.jpg") center no-repeat;
   background-size: cover;
   padding: 300px 0px;
   height: 100%;
+  box-sizing: border-box;
 }
-.record-wrap .record {
-  background: white;
+@media (min-width:768px) and (max-width:1269px) {
+  .record-wrap img {
+    width: 100%;
+  }
 }
 @media (min-width:1270px) {
-  .record-wrap .record {
-    margin: 0px auto;
-    width: 70%;
-    height: 500px;
+  .record-wrap img {
+    margin-bottom: 50px;
   }
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .record-wrap {
+    padding: 100px 0px;
+  }
+}
+.record-wrap .record {
+  background: rgba(255, 255, 255, 0.466);
+  margin: 0px auto;
+  width: 70%;
+  height: 500px;
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .record-wrap .record {
+    height: 400px;
+    width: 80%;
+  }
+}
+.record-wrap .record .record-ul {
+  padding: 20px 20px;
+}
+.record-wrap .record .record-ul li {
+  font-size: 50px;
+  font-weight: bold;
+}
+.record-wrap .record .record-ul li hr {
+  color: red;
 }
 
 footer {

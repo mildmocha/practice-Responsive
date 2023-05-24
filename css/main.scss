@@ -80,7 +80,7 @@ nav {
   background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=);
   @media #{$tablet} {
     padding: 300px 0 100px 0;
-    background-size: cover; 
+    background-size: cover;
     width: 100%;
   }
   .wrap {
@@ -108,7 +108,7 @@ nav {
   }
 }
 canvas {
-  border: solid red 1px;
+  border: solid black 5px;
   background-color: white;
 
   height: 70%;
@@ -126,6 +126,9 @@ canvas {
   }
 }
 .btn {
+  padding-bottom: 200px;
+  margin: auto;
+  width: 500px;
   @media #{$pc} {
     padding-bottom: 200px;
     margin: auto;
@@ -133,7 +136,14 @@ canvas {
   }
   .start {
     font-family: "Permanent Marker", cursive;
-
+    font-size: 50px;
+    border-radius: 50px;
+    background: rgb(147, 216, 153);
+    width: 500px;
+    height: 100px;
+    &:active {
+      background: rgb(53, 53, 50);
+    }
     @media #{$pc} {
       font-size: 50px;
       border-radius: 50px;
@@ -152,13 +162,10 @@ canvas {
 
   @media #{$pc} {
     width: 100%;
-    
+
     padding: 500px 0px 200px 65px;
   }
   @media #{$tablet} {
-    
-    
-
     width: 100%;
     height: 100vh;
     padding: 200px 0px 100px 0px;
@@ -172,9 +179,9 @@ canvas {
     top: -100px;
     display: inline-block;
     @media #{$tablet} {
-      top:0;
+      top: 0;
+      margin-left: 30px;
     }
-    
   }
 
   .tip_input {
@@ -182,9 +189,9 @@ canvas {
     display: inline-block;
     margin: auto;
     width: 100%;
-    @media #{$tablet}{padding-left: 5%;
-    width: 90%;
-        
+    @media #{$tablet} {
+      padding-left: 5%;
+      width: 90%;
     }
     input {
       width: 40%;
@@ -195,7 +202,6 @@ canvas {
       height: 55px;
       border-radius: 10px;
       background: transparent;
-      
     }
   }
 
@@ -206,16 +212,15 @@ canvas {
       margin: 0 auto;
       width: 40%;
       background-color: rgba(239, 241, 226, 0);
-      min-height: 600px;}
-      @media #{$tablet} {
-        width: 40%;
+      min-height: 600px;
+    }
+    @media #{$tablet} {
+      width: 40%;
       margin: 0 auto;
       padding: 20px 0px 20px 0px;
-box-sizing: border-box;
-      height: 400px;
-              
-      }
-    
+      box-sizing: border-box;
+      height: 350px;
+    }
 
     .item_row {
       i {
@@ -249,7 +254,6 @@ box-sizing: border-box;
           font-family: "Nanum Pen Script", cursive;
           font-size: 40px;
         }
-       
       }
     }
   }
@@ -277,55 +281,93 @@ box-sizing: border-box;
       margin-top: 10%;
     }
     @media #{$pc} {
-      
-    
-    width: 500px;
-    
-    height: 300px;
+      width: 500px;
+
+      height: 300px;
     }
   }
 }
 .image {
   background: #131b16 url("../img/neon.avif") center no-repeat;
   background-size: 100%;
-  
+
   height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media #{$tablet} {
+    flex-direction: column;
+    justify-content: center;
+  }
   @media #{$pc} {
     padding: 100vh 100px;
-
   }
+
   .arc {
+    @media #{$tablet} {
+      position: static;
+      opacity: 1;
+      width: 50%;
+      height: 40%;
+      margin-bottom: 40px;
+    }
     opacity: 0;
     position: relative;
 
-    width: 40%;
+    width: 30%;
     height: 50%;
   }
 
   .say {
-    width: 80%;
-
+    width: 70%;
+    text-shadow: -1px 0px rgb(255, 0, 119), 0px 1px red, 1px 0px red,
+      0px -1px red;
+    font-weight: bold;
+    font-size: 25px;
     color: white;
     @media #{$pc} {
-      padding-left: 50px;
-      font-size: 100px;
+      padding-left: 70px;
+      font-size: 70px;
     }
   }
 }
 .record-wrap {
+  text-align: center;
   background: url("../img/yellow.jpg") center no-repeat;
   background-size: cover;
   padding: 300px 0px;
   height: 100%;
-  .record {
-    background: white;
+  img {
+    @media #{$tablet} {
+      width: 100%;
+    }
     @media #{$pc} {
-      margin: 0px auto;
-      width: 70%;
-      height: 500px;
+      margin-bottom: 50px;
+    }
+  }
+  @media #{$tablet} {
+    padding: 100px 0px;
+  }
+  box-sizing: border-box;
+  .record {
+    background: rgba(255, 255, 255, 0.466);
+    margin: 0px auto;
+    width: 70%;
+    height: 500px;
+    @media #{$tablet} {
+      height: 400px;
+      width: 80%;
+    }
+
+    .record-ul {
+      padding: 20px 20px;
+      li {
+        font-size: 50px;
+        font-weight: bold;
+        hr {
+          color: red;
+        }
+      }
     }
   }
 }

@@ -2,6 +2,7 @@
 //console.log (window.scrollY)})
 // 이미지 요소를 선택합니다.
 const image = document.querySelector('.arc');
+const rect = image.getBoundingClientRect();
 
 // 이미지를 확대 또는 축소할 수 있는 최대 크기와 최소 크기를 지정합니다.
 const maxOpacity = 1;
@@ -15,16 +16,18 @@ function handleScroll() {
 
   // 이미지 크기를 계산합니다.
   const scaleFactor =  (document.documentElement.scrollHeight - window.innerHeight);
-  const opacity =  scaleFactor * (scrollPosition )/4500000;
+  const opacity =  scaleFactor * (scrollPosition )/43000000;
 
   // 이미지 크기를 적용합니다.
-  if (scrollPosition >4000 && window.innerWidth > 1269){
+  if (scrollPosition < 5000 && window.innerWidth > 1269 ){
   image.style.opacity = opacity;
-  image.style.transform = `translateX(${scrollPosition-5200}px)`;
+  image.style.transform = `translateX(${scrollPosition-5000}px)`;
+  console.log(window.innerWidth)
   }
 
+
   //image.style.transform = `translateY(100px)`;
-console.log(scrollPosition)
+//console.log(scrollPosition)
 
   
 
