@@ -20,7 +20,7 @@
         //패들 설정
         let paddleHeight = displayHeight/40;
         let paddleWidth = displayWidth/ 8   
-        let paddleX = (canvas.width+paddleWidth); //패들위치
+        let paddleX = (canvas.width+paddleWidth-300); //패들위치
    //공 위치
    let x = canvas.width / 2;
    let y = canvas.height +260;
@@ -43,7 +43,7 @@
   let brickHeight= displayHeight/25 ;
   let brickPadding = displayWidth/190;
   let brickOffsetTop = displayHeight/10;
-  let brickOffsetLeft = displayWidth/38;
+  let brickOffsetLeft = displayWidth/15;
   
   
   
@@ -155,8 +155,8 @@
         }
   function canvasSize() {
     const devicePixelRatio = window.devicePixelRatio || 1;
-    canvas.width = displayWidth * devicePixelRatio ;
-    canvas.height = displayHeight * devicePixelRatio;
+    canvas.width = displayWidth ;
+    canvas.height = displayHeight;
    
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);

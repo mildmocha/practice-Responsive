@@ -1,4 +1,5 @@
 body {
+  background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=);
   margin: 0;
 }
 
@@ -11,8 +12,7 @@ li {
 }
 
 header {
-  position: fixed;
-  background: rgba(0, 110, 255, 0.438);
+  background: rgba(204, 215, 230, 0.438);
   top: 0;
   left: 0;
   width: 100%;
@@ -20,7 +20,8 @@ header {
 }
 
 .scr {
-  transform: translateY(-400px);
+  position: sticky;
+  transform: translateY(-300px);
 }
 
 .logo {
@@ -30,7 +31,7 @@ header {
   text-align: center;
   font-weight: bold;
   color: white;
-  font-size: 100px;
+  font-size: 50px;
   justify-content: center;
 }
 @media (max-width:767px) {
@@ -79,8 +80,15 @@ nav ul li a {
   width: 100%;
 }
 .wrap-wrap {
-  padding: 700px 0 200px 0;
+  padding: 500px 0 200px 0;
   background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=);
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .wrap-wrap {
+    padding: 300px 0 100px 0;
+    background-size: cover;
+    width: 100%;
+  }
 }
 .wrap-wrap .wrap {
   margin: auto;
@@ -90,10 +98,13 @@ nav ul li a {
   justify-content: center;
   width: 100%;
   height: 500px;
+  background: url(../img/nin.webp) no-repeat no-repeat center center;
 }
-@media (min-width:1270px) {
+@media (min-width:768px) and (max-width:1269px) {
   .wrap-wrap .wrap {
-    background: url(https://i.namu.wiki/i/6ssCAw8JIsvKCk33Xz5TGiP1gpqTo-UIX2vI_1c0fQswBlqEDBKA4NfukubAnjSWkE3CrTdgi9vrbNsdc0LzHwQbMrd0RxQMXuQA4ZmuNja2a-g3NQQKOMlRpdwdTSU4u2L-StGOI3ZpzgLA3pqCvw.webp) no-repeat no-repeat center center;
+    background: url(../img/nin.webp) no-repeat no-repeat center center;
+    width: 100%;
+    background-size: 100%;
   }
 }
 @media (max-width:767px) {
@@ -109,18 +120,21 @@ nav ul li a {
 canvas {
   border: solid red 1px;
   background-color: white;
-}
-@media (min-width:1270px) {
-  canvas {
-    height: 70%;
-    width: 650px;
-  }
+  height: 70%;
+  width: 650px;
 }
 @media (max-width:767px) {
   canvas {
     width: 75%;
     height: 50%;
     margin-top: 30px;
+  }
+}
+@media (min-width:768px) and (max-width:1269px) {
+  canvas {
+    width: 70%;
+    height: 65%;
+    margin-top: 0px;
   }
 }
 
@@ -148,22 +162,34 @@ canvas {
 }
 
 .tip_wrap {
+  box-sizing: border-box;
   background: url(../img/board.jpg) no-repeat center;
   background-size: cover;
   text-align: center;
 }
 @media (min-width:1270px) {
   .tip_wrap {
-    min-width: 1750px;
     width: 100%;
-    box-sizing: border-box;
     padding: 500px 0px 200px 65px;
+  }
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .tip_wrap {
+    width: 100%;
+    height: 100vh;
+    padding: 200px 0px 100px 0px;
+    box-sizing: border-box;
   }
 }
 .tip_wrap h1 {
   position: relative;
-  top: 0px;
+  top: -100px;
   display: inline-block;
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .tip_wrap h1 {
+    top: 0;
+  }
 }
 .tip_wrap .tip_input {
   text-align: center;
@@ -171,10 +197,21 @@ canvas {
   margin: auto;
   width: 100%;
 }
+@media (min-width:768px) and (max-width:1269px) {
+  .tip_wrap .tip_input {
+    padding-left: 5%;
+    width: 90%;
+  }
+}
 .tip_wrap .tip_input input {
   width: 40%;
   height: 50px;
   margin: auto;
+}
+.tip_wrap .tip_input button {
+  height: 55px;
+  border-radius: 10px;
+  background: transparent;
 }
 @media (min-width:1270px) {
   .tip_wrap .tip {
@@ -182,8 +219,26 @@ canvas {
     margin: 0 auto;
     width: 40%;
     background-color: rgba(239, 241, 226, 0);
-    min-height: 800px;
+    min-height: 600px;
   }
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .tip_wrap .tip {
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px 0px 20px 0px;
+    box-sizing: border-box;
+    height: 400px;
+  }
+}
+.tip_wrap .tip .item_row i {
+  font-size: 20px;
+  color: red;
+}
+.tip_wrap .tip .item_row button {
+  float: right;
+  background: transparent;
+  border: none;
 }
 @media (min-width:1270px) {
   .tip_wrap .tip .item_row {
@@ -208,15 +263,6 @@ canvas {
     font-family: "Nanum Pen Script", cursive;
     font-size: 40px;
   }
-  .tip_wrap .tip .item_row i {
-    font-size: 20px;
-    color: red;
-  }
-  .tip_wrap .tip .item_row button {
-    float: right;
-    background: transparent;
-    border: none;
-  }
 }
 
 .How-to {
@@ -226,28 +272,51 @@ canvas {
   text-align: center;
   background: white;
 }
+@media (min-width:768px) and (max-width:1269px) {
+  .How-to {
+    height: 100vh;
+    padding: 50;
+  }
+}
 .How-to .How {
   margin-bottom: 100px;
 }
+@media (min-width:768px) and (max-width:1269px) {
+  .How-to .How {
+    padding-top: 20px;
+  }
+}
 .How-to img {
-  width: 500px;
-  height: 300px;
+  width: 80%;
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .How-to img {
+    margin-top: 10%;
+  }
+}
+@media (min-width:1270px) {
+  .How-to img {
+    width: 500px;
+    height: 300px;
+  }
 }
 
 .image {
   background: #131b16 url("../img/neon.avif") center no-repeat;
   background-size: 100%;
-  padding: 100vh 100px;
   height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+@media (min-width:1270px) {
+  .image {
+    padding: 100vh 100px;
+  }
+}
 .image .arc {
-  opacity: -3000000;
+  opacity: 0;
   position: relative;
-  bottom: -600px;
-  left: -1100px;
   width: 40%;
   height: 50%;
 }

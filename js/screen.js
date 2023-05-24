@@ -9,16 +9,22 @@ const minOpacity = 0 ;
 
 // 스크롤 이벤트를 처리하는 함수를 정의합니다.
 function handleScroll() {
+  
   // 현재 스크롤 위치를 가져옵니다.
   const scrollPosition = window.scrollY;
 
   // 이미지 크기를 계산합니다.
   const scaleFactor =  (document.documentElement.scrollHeight - window.innerHeight);
-  const opacity =  scaleFactor * (scrollPosition )/45000000;
+  const opacity =  scaleFactor * (scrollPosition )/4500000;
 
   // 이미지 크기를 적용합니다.
+  if (scrollPosition >4000 && window.innerWidth > 1269){
   image.style.opacity = opacity;
-  image.style.transform = `translateX(${scrollPosition-4400}px)`;
+  image.style.transform = `translateX(${scrollPosition-5200}px)`;
+  }
+
+  //image.style.transform = `translateY(100px)`;
+console.log(scrollPosition)
 
   
 
@@ -26,11 +32,12 @@ function handleScroll() {
 }
 
 // 스크롤 이벤트 리스너를 등록합니다.
+
 window.addEventListener('scroll', handleScroll);
- 
+
 
 //header
-const header = document.querySelector('header')
+const header = document.querySelector('nav')
 
 let pos = {y:0, oy:0, status:true}
 window.onscroll = function(){  
