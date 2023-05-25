@@ -40,7 +40,7 @@ window.addEventListener('scroll', handleScroll);
 
 
 //header
-const header = document.querySelector('nav')
+const header = document.querySelector('header')
 
 let pos = {y:0, oy:0, status:true}
 window.onscroll = function(){  

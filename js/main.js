@@ -7,6 +7,9 @@ let ctx = canvas.getContext("2d");
 
 let displayWidth = window.innerWidth;
 let displayHeight = window.innerHeight;
+const leftbtn = document.querySelector(".left")
+const rightbtn = document.querySelector(".right")
+
 
 // 공 속도
 let dx = displayWidth / 180;
@@ -17,12 +20,14 @@ let ballRadius = displayWidth / 50;
 //패들 설정
 let paddleHeight = displayHeight / 40;
 let paddleWidth = displayWidth / 8;
-let paddleX = canvas.width + paddleWidth - 300; //패들위치
+let paddleX = canvas.width + paddleWidth -canvas.width*0.5; //패들위치
 //공 위치
 let x = canvas.width / 2;
 let y = canvas.height + 260;
 console.log(y);
 //좌우
+
+
 let rightPressed = false;
 let leftPressed = false;
 let spaceBar = false;
@@ -76,6 +81,8 @@ function drawBricks() {
   }
 }
 
+
+
 //충돌감지함수
 function collisionDetection() {
   for (let c = 0; c < brickColumnCount; c++) {
@@ -99,23 +106,48 @@ function collisionDetection() {
   }
 }
 
+
+
 //방향키 함수
 function keyDownHandler(e) {
   if (e.keyCode == 39) {
-    rightPressed = true;
+  rightPressed  = true 
   } else if (e.keyCode == 37) {
     leftPressed = true;
   } else if (e.keyCode == 32) {
     spaceBar = true;
   }
 }
+
+
 function keyUpHandler(e) {
+  
   if (e.keyCode == 39) {
-    rightPressed = false;
+    rightPressed  = false;
   } else if (e.keyCode == 37) {
     leftPressed = false;
   }
 }
+
+leftbtn.addEventListener('mousedown',() => {
+  leftPressed =true
+
+})
+leftbtn.addEventListener('mouseup',() => {
+  leftPressed =false
+
+})
+rightbtn.addEventListener('mousedown',() => {
+  rightPressed =true
+
+})
+rightbtn.addEventListener('mouseup',() => {
+  rightPressed =false
+
+})
+
+
+
 
 //공 만드는 함수
 

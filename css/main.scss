@@ -2,7 +2,11 @@ $mobile: "(max-width:767px)";
 
 $tablet: "(min-width:768px) and (max-width:1269px)";
 $pc: "(min-width:1270px)";
-body {
+
+
+body {position: relative;
+  
+  box-sizing: border-box;
   background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=);
 
   margin: 0;
@@ -15,20 +19,31 @@ li {
   list-style: none;
 }
 header {
-  background: rgba(204, 215, 230, 0.438);
+  z-index: 999;
+  @media #{$pc} {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  position: sticky;
   top: 0;
   left: 0;
+  background: rgba(204, 215, 230, 0.438);
+ 
   width: 100%;
   transition: 0.5s;
 }
 .scr {
+  
   position: sticky;
-  transform: translateY(-300px);
+  top:0;
+  transform: translateY(-200px);
+  
 }
 .logo {
-  padding-top: 50px;
+  
   margin-left: 0;
-  margin-bottom: 50px;
+  
   text-align: center;
   font-weight: bold;
   color: white;
@@ -46,7 +61,7 @@ header {
 nav {
   background: rgb(57, 57, 61);
   height: 100px;
-  margin-top: 100px;
+ 
   @media #{$mobile} {
     margin-bottom: 20px;
   }
@@ -83,6 +98,9 @@ nav {
     background-size: cover;
     width: 100%;
   }
+  @media #{$mobile} {
+  padding: 100px 0 200px 0; 
+  }
   .wrap {
     margin: auto;
     display: flex;
@@ -101,7 +119,7 @@ nav {
     @media #{$mobile} {
       height: 600px;
       width: 100%;
-      background: url(/brick/pngegg.png) center center no-repeat;
+      background: url(../pngegg.png) center center no-repeat;
       background-size: 100px contain;
       align-items: start;
     }
@@ -115,7 +133,7 @@ canvas {
   width: 650px;
 
   @media #{$mobile} {
-    width: 75%;
+    width: 340px;
     height: 50%;
     margin-top: 30px;
   }
@@ -126,6 +144,8 @@ canvas {
   }
 }
 .btn {
+  position: relative;
+  z-index: 100;
   padding-bottom: 200px;
   margin: auto;
   width: 500px;
@@ -134,13 +154,32 @@ canvas {
     margin: auto;
     width: 500px;
   }
-  .start {
+  @media #{$mobile} {
+    position: relative;
+    width: 100%;
+  }
+  .start { z-index: 100;
+    display: block;
     font-family: "Permanent Marker", cursive;
     font-size: 50px;
     border-radius: 50px;
     background: rgb(147, 216, 153);
-    width: 500px;
+    width: 300px;
+    margin: auto;
     height: 100px;
+    @media #{$mobile} {
+      display: block;
+     
+      background: rgb(86, 190, 115);
+margin: auto;
+     position: relative;
+      width: 200px;
+      top:-140px;
+      border-radius: 20px;
+      height: 60px;
+      font-size: 20px;
+      color: #1b38b9;
+    }
     &:active {
       background: rgb(53, 53, 50);
     }
@@ -156,20 +195,64 @@ canvas {
     }
   }
 }
+.arrow {
+  position: relative;
+  @media #{$pc} {
+    display: none;
+  }
+  @media #{$mobile} {
+   
+    top: -530px;
+    width: 350px;
+  }
+  @media #{$tablet} {
+    width:800px ;
+  top: -350px;
+  
+    
+  
+  }
 
+  width: 500px; margin: auto;
+  button {display: inline-block;
+    @media #{$mobile} { width: 130px;
+    }
+    @media #{$tablet} {width:200px ;}
+    background: rgb(4, 255, 25);
+    border-radius: 50px;
+    box-sizing: border-box;
+    width: 100px;
+    img{
+      width: 100%;
+    }
+
+  }
+  .right{
+    float: right;
+  }
+  &::after{
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
 .tip_wrap {
   box-sizing: border-box;
 
   @media #{$pc} {
     width: 100%;
 
-    padding: 500px 0px 200px 65px;
+    padding: 400px 0px 200px 65px;
   }
   @media #{$tablet} {
     width: 100%;
     height: 100vh;
-    padding: 200px 0px 100px 0px;
+    padding: 300px 0px 100px 0px;
     box-sizing: border-box;
+  }
+  @media #{$mobile} {
+    height: 100vh;
+    padding: 35vh 0px 100px 0px;
   }
   background: url(../img/board.jpg) no-repeat center;
   background-size: cover;
@@ -182,6 +265,11 @@ canvas {
       top: 0;
       margin-left: 30px;
     }
+    @media #{$mobile} {
+      top: 30px;
+      margin: 0 0 0 30px;
+     
+    }
   }
 
   .tip_input {
@@ -192,6 +280,10 @@ canvas {
     @media #{$tablet} {
       padding-left: 5%;
       width: 90%;
+    }
+    @media #{$mobile} {
+      padding-left: 5%;
+      width: 85%;
     }
     input {
       width: 40%;
@@ -212,7 +304,7 @@ canvas {
       margin: 0 auto;
       width: 40%;
       background-color: rgba(239, 241, 226, 0);
-      min-height: 600px;
+      min-height: 500px;
     }
     @media #{$tablet} {
       width: 40%;
@@ -221,40 +313,67 @@ canvas {
       box-sizing: border-box;
       height: 350px;
     }
+    @media #{$mobile} {
+      width: 50%;
+      margin: 0 auto;
+      padding: 30px 0px 20px 0px;
+      box-sizing: border-box;
+      height: 50%;
+    }
 
     .item_row {
       i {
         font-size: 20px;
         color: red;
+        
       }
       button {
+        &::after{
+          display: block;
+          content: "";
+          clear: both;
+        }
         float: right;
+        position: relative;
+        top: 10px;
         background: transparent;
         border: none;
+        @media #{$mobile} {top:0}
+      }
+      position: relative;
+      &::before {
+        border-radius: 50px;
+        content: "";
+        display: block;
+        background: rgba(255, 0, 0, 0.425) url(../img/pngwing.com.png) center
+          center no-repeat;
+        position: absolute;
+        top: 10px;
+        left: -30px;
+        width: 30px;
+        height: 30px;
+        @media #{$mobile} {
+          top: 0px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        }
+        background-size: cover;
       }
       @media #{$pc} {
-        position: relative;
         margin-bottom: 30px;
-        &::before {
-          border-radius: 50px;
-          content: "";
-          display: block;
-          background: rgba(255, 0, 0, 0.425) url(../img/pngwing.com.png) center
-            center no-repeat;
-          position: absolute;
-          top: 10px;
-          left: -30px;
-          width: 30px;
-          height: 30px;
-          background-size: cover;
-        }
-        .item {
+       
+        
+      }
+      .item {
           text-align: start;
           padding-left: 20px;
           font-family: "Nanum Pen Script", cursive;
           font-size: 40px;
+          @media #{$mobile} {
+            font-size: 20px;
+          }
         }
-      }
     }
   }
 }
@@ -278,6 +397,7 @@ canvas {
   img {
     width: 80%;
     @media #{$tablet} {
+      width: 70%;
       margin-top: 10%;
     }
     @media #{$pc} {
@@ -302,12 +422,24 @@ canvas {
   @media #{$pc} {
     padding: 100vh 100px;
   }
+  @media #{$mobile} {
+    display: block;
+    text-align: center;
+  }
 
   .arc {
     @media #{$tablet} {
       position: static;
       opacity: 1;
       width: 50%;
+      height: 40%;
+      margin-bottom: 40px;
+    }
+    @media #{$mobile} {
+      margin-top: 100px;
+      position: static;
+      opacity: 1;
+      width: 90%;
       height: 40%;
       margin-bottom: 40px;
     }
@@ -329,6 +461,10 @@ canvas {
       padding-left: 70px;
       font-size: 70px;
     }
+    @media #{$mobile} {
+      margin: auto;
+      width: 90%;
+    }
   }
 }
 .record-wrap {
@@ -337,8 +473,14 @@ canvas {
   background-size: cover;
   padding: 300px 0px;
   height: 100%;
+  @media #{$mobile} {
+    padding: 100px 0px;
+  }
   img {
     @media #{$tablet} {
+      width: 100%;
+    }
+    @media #{$mobile} {
       width: 100%;
     }
     @media #{$pc} {
@@ -358,12 +500,18 @@ canvas {
       height: 400px;
       width: 80%;
     }
+    @media #{$mobile} {
+      width: 90%;
+    }
 
     .record-ul {
       padding: 20px 20px;
       li {
         font-size: 50px;
         font-weight: bold;
+        @media #{$tablet} {
+          font-size: 40px;
+        }
         hr {
           color: red;
         }
