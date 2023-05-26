@@ -2,6 +2,20 @@ const startBtn = document.querySelector(".start");
 //캔버스
 const columnCountInput = document.querySelector(".num");
 
+const mouse = document.querySelector ('.mouse')
+let isAnimationRunning = false;
+
+mouse.addEventListener("mousemove", () => {
+  if (!isAnimationRunning) {
+  
+    mouse.style.animation = 'ani 1s linear forwards';
+    isAnimationRunning = true;
+  }
+});
+
+mouse.addEventListener("animationend", () => {
+  isAnimationRunning = false;
+});
 
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
@@ -25,7 +39,7 @@ let paddleX = canvas.width + paddleWidth -canvas.width*0.5; //패들위치
 //공 위치
 let x = canvas.width / 2;
 let y = canvas.height + 260;
-console.log(y);
+
 //좌우
 
 
@@ -37,15 +51,15 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 //벽돌 선언
-let brickRowCount = 3 //열
-console.log(brickRowCount)
+let brickRowCount = 2 //열
 
-let brickColumnCount = 5; //행
-let brickWidth = displayWidth / 7;
+
+let brickColumnCount = 4; //행
+let brickWidth = displayWidth / brickColumnCount * 0.8;
 let brickHeight = displayHeight / 25;
 let brickPadding = displayWidth / 190;
 let brickOffsetTop = displayHeight / 10;
-let brickOffsetLeft = displayWidth / 15;
+let brickOffsetLeft = displayWidth / 12;
 
 let numbtn = document.querySelector('.num23')
 
@@ -54,7 +68,7 @@ let bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
   bricks[c] = [];
   for (let r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = { x: 0, y: 0, status: 1 };
+    bricks[c][r] = { x: 0, y: 0, status: 2 };
   }
 }
 
@@ -63,7 +77,7 @@ let score = 0;
 //점수함수
 function drawScore() {
   ctx.font = `${displayWidth / 25}px arial`;
-  ctx.fillStyle = "#0095dd";
+  ctx.fillStyle = "#fff";
   ctx.fillText("Score: " + score, 8, 60);
 }
 
@@ -74,7 +88,7 @@ function drawBricks() {
   
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
-      if (bricks[c][r].status == 1) {
+      if (bricks[c][r].status == 2) {
         let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
         let brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
 
@@ -82,7 +96,7 @@ function drawBricks() {
         bricks[c][r].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = "#0095dd";
+        ctx.fillStyle = "#FF0000";
         ctx.fill();
         ctx.closePath();
       }
@@ -97,7 +111,7 @@ function collisionDetection() {
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
       let b = bricks[c][r];
-      if (b.status == 1) {
+      if (b.status == 2) {
         if (
           x > b.x &&
           x < b.x + ballRadius + brickWidth &&
@@ -105,7 +119,7 @@ function collisionDetection() {
           y < b.y + brickHeight + ballRadius
         ) {
           dy = -dy;
-          b.status = 0;
+          b.status = 1;
           score++;
           if (score == brickRowCount * brickColumnCount) {onAddRedcord()
           }
@@ -171,14 +185,14 @@ function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
 
-  ctx.fillStyle = "#0095DD";
+  ctx.fillStyle = "#FFFF00";
   ctx.fill();
   ctx.closePath();
 }
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = "#0095DD";
+  ctx.fillStyle = "#0080FF";
   ctx.fill();
   ctx.closePath();
 }
@@ -206,15 +220,21 @@ function draw() {
 
   // 공 화면 안에 가두기
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-    dx = -dx;
+    dx = dx*1.1
+     dy = dy*1.1
+    dx = -dx;  
+   
+    console.log (dx)
   }
 
   //바닥에 닿으면 끝 ( gameover 나중에 추가)
   if (y + dy < ballRadius) {
     dy = -dy;
   } else if (y + dy > canvas.height - ballRadius) {
-    if (x > paddleX && x < paddleX + paddleWidth + ballRadius) {
-      dy = -dy;
+    if (x > paddleX && x < paddleX + paddleWidth + ballRadius) { 
+       dy= dy*1.1;
+       dx = dx*1.1;
+      dy = -dy; 
     } else {
 
       document.location.reload();
@@ -237,7 +257,7 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
 });
 startBtn.addEventListener("click", () => {
- 
+  console.log(dx)
   setInterval(draw, 10);
 });
 
@@ -263,7 +283,7 @@ const name = prompt("이름등록", "");
   // 배열 products안에 오브젝트 product(입력한 내용과 id)를 집어넣는다
   save2(); //save함수 실행
 
-  console.log("records ? ", records);
+ 
 
   if (name.text == "") {
     prompt.focus();
@@ -300,7 +320,7 @@ function createItem2(name) {
 //초기화 해주는 함수
 function init2() {
   const userRecords =JSON.parse(localStorage.getItem('records'))
-  console.log(userRecords)
+ 
   if(userRecords){
     userRecords.forEach(aa => createItem2(aa)
     );

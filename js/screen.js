@@ -22,7 +22,7 @@ function handleScroll() {
   if (scrollPosition < 5000 && window.innerWidth > 1269 ){
   image.style.opacity = opacity;
   image.style.transform = `translateX(${scrollPosition-5000}px)`;
-  console.log(window.innerWidth)
+ 
   }
 
 
@@ -50,7 +50,7 @@ window.onscroll = function(){
     //현재 스크롤값이 과거 스크롤 값보다 컸을때 true
     
     pos.oy = pos.y; 
-    if(pos.status){ console.log('scr')
+    if(pos.status){ 
     header.classList.add('scr')
 }else { 
   header.classList.remove('scr')

@@ -40,7 +40,7 @@ header {
   margin-left: 0;
   text-align: center;
   font-weight: bold;
-  color: white;
+  color: rgb(121, 47, 47);
   font-size: 50px;
   justify-content: center;
 }
@@ -61,18 +61,20 @@ nav {
 }
 @media (max-width:767px) {
   nav {
+    height: 50px;
     margin-bottom: 20px;
   }
 }
+@media (min-width:768px) and (max-width:1269px) {
+  nav {
+    height: 50px;
+  }
+}
 nav ul {
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-@media (max-width:767px) {
-  nav ul {
-    padding: 0;
-  }
 }
 nav ul li {
   flex: 1;
@@ -82,6 +84,16 @@ nav ul li a {
   line-height: 100px;
   font-size: 20px;
   color: white;
+}
+@media (max-width:767px) {
+  nav ul li a {
+    line-height: 50px;
+  }
+}
+@media (min-width:768px) and (max-width:1269px) {
+  nav ul li a {
+    line-height: 50px;
+  }
 }
 
 .main {
@@ -133,7 +145,7 @@ nav ul li a {
 
 canvas {
   border: solid black 5px;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   height: 70%;
   width: 650px;
 }
@@ -225,14 +237,14 @@ canvas {
 }
 @media (max-width:767px) {
   .arrow {
-    top: -530px;
+    top: -550px;
     width: 350px;
   }
 }
 @media (min-width:768px) and (max-width:1269px) {
   .arrow {
     width: 800px;
-    top: -350px;
+    top: -370px;
   }
 }
 .arrow button {
@@ -424,16 +436,43 @@ canvas {
 }
 
 .How-to {
+  position: relative;
   margin: auto;
   width: 100%;
   padding: 200px 0;
   text-align: center;
   background: white;
 }
+.How-to .h-images {
+  font-size: 100px;
+  /*
+     div {
+       bottom: 180px;
+       position: absolute;
+       width: 200px; height: 200px;
+       border: red solid 10px ;
+       border-radius: 100%;
+     }
+     .red1 {
+       left: 380px;
+     }
+     .red2 {
+           left: 720px;
+     }
+  */
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .How-to .h-images {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: start;
+  }
+}
 @media (min-width:768px) and (max-width:1269px) {
   .How-to {
     height: 100vh;
-    padding: 50;
+    padding: 0px;
   }
 }
 .How-to .How {
@@ -449,7 +488,7 @@ canvas {
 }
 @media (min-width:768px) and (max-width:1269px) {
   .How-to img {
-    width: 70%;
+    width: 50%;
     margin-top: 10%;
   }
 }
@@ -457,6 +496,37 @@ canvas {
   .How-to img {
     width: 500px;
     height: 300px;
+  }
+}
+@keyframes ani {
+  0% {
+    transform: translateX(-50px);
+  }
+  40% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  60% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+.How-to .mouse {
+  height: 500px;
+}
+@media (min-width:768px) and (max-width:1269px) {
+  .How-to .mouse {
+    width: 50%;
+    height: 50%;
+  }
+}
+@media mobile {
+  .How-to .mouse {
+    padding-left: 50px;
   }
 }
 

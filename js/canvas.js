@@ -22,7 +22,7 @@ function onAdd(){
   // 배열 products안에 오브젝트 product(입력한 내용과 id)를 집어넣는다
   save(); //save함수 실행
 
-  console.log('products ? ',products)
+  
 
 
 
@@ -82,7 +82,7 @@ function createItem(product){
 //초기화 해주는 함수
 function init() {
   const userProducts =JSON.parse(localStorage.getItem('products'))
-  console.log(userProducts)
+  
   if(userProducts){
     userProducts.forEach(aa => createItem(aa)
     );
