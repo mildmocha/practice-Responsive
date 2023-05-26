@@ -1,6 +1,7 @@
- 
 const startBtn = document.querySelector(".start");
 //캔버스
+const columnCountInput = document.querySelector(".num");
+
 
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
@@ -36,13 +37,18 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 //벽돌 선언
-let brickRowCount = 1; //열
-let brickColumnCount = 1; //행
-let brickWidth = displayWidth / 11;
+let brickRowCount = 3 //열
+console.log(brickRowCount)
+
+let brickColumnCount = 5; //행
+let brickWidth = displayWidth / 7;
 let brickHeight = displayHeight / 25;
 let brickPadding = displayWidth / 190;
 let brickOffsetTop = displayHeight / 10;
 let brickOffsetLeft = displayWidth / 15;
+
+let numbtn = document.querySelector('.num23')
+
 
 let bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
@@ -61,8 +67,11 @@ function drawScore() {
   ctx.fillText("Score: " + score, 8, 60);
 }
 
+
 //벽돌그리는 함수
 function drawBricks() {
+  
+  
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
       if (bricks[c][r].status == 1) {
@@ -126,6 +135,13 @@ function keyUpHandler(e) {
     rightPressed  = false;
   } else if (e.keyCode == 37) {
     leftPressed = false;
+  }
+}
+document.addEventListener("mousemove", mouseMoveHandler, false);
+function mouseMoveHandler(e) {
+  var relativeX = e.clientX - canvas.offsetLeft;
+  if(relativeX > 0 && relativeX < canvas.width) {
+      paddleX = relativeX - paddleWidth/2;
   }
 }
 
@@ -200,6 +216,9 @@ function draw() {
     if (x > paddleX && x < paddleX + paddleWidth + ballRadius) {
       dy = -dy;
     } else {
+
+      document.location.reload();
+     
     }
   }
 
@@ -218,6 +237,7 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
 });
 startBtn.addEventListener("click", () => {
+ 
   setInterval(draw, 10);
 });
 
