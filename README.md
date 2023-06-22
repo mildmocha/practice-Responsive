@@ -1,4 +1,4 @@
-###### practice-Responsive
+# practice-Responsive
 link : https://mildmocha.github.io/practice-Responsive/<br>
 js에서 canvas를 이용한 벽돌깨기 게임
 <br> scss를 사용한 반응형
