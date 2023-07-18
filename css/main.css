@@ -1,7 +1,7 @@
 body {
   position: relative;
   box-sizing: border-box;
-  background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=);
+  background:#f8f8f8;
   margin: 0;
 }
 
@@ -102,7 +102,8 @@ nav ul li a {
 }
 .wrap-wrap {
   padding: 500px 0 200px 0;
-  background: url(https://media.istockphoto.com/id/1174734062/ko/%EC%82%AC%EC%A7%84/%EB%B0%B0%EA%B2%BD-%EC%A7%88%EA%B0%90-%EB%B0%8F-%EB%B0%B0%EA%B2%BD-%ED%99%94%EB%A9%B4%EC%9A%A9-%EC%98%A4%EB%9E%98%EB%90%9C-%EB%B2%BD%EB%8F%8C-%EB%B2%BD.jpg?s=1024x1024&w=is&k=20&c=EOwRdKWRe-7PDmxkjc8Pg-KrOAH3-QbqkJR7SPiBlUY=);
+  background: url(https://i.pinimg.com/564x/f0/e5/8b/f0e58b7c1021563fabb7f59bc087335e.jpg) center;
+  background-size: contain;
 }
 @media (min-width:768px) and (max-width:1269px) {
   .wrap-wrap {
@@ -187,7 +188,8 @@ canvas {
 .btn .start {
   z-index: 100;
   display: block;
-  font-family: "Permanent Marker", cursive;
+  font-family: cursive;
+  font-weight: bold;
   font-size: 50px;
   border-radius: 50px;
   background: rgb(147, 216, 153);
@@ -284,7 +286,8 @@ canvas {
 }
 @media (min-width:1270px) {
   .tip_wrap {
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     padding: 400px 0px 200px 65px;
   }
 }
